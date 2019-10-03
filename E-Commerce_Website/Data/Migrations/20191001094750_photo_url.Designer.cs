@@ -4,14 +4,16 @@ using E_Commerce_Website.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace E_Commerce_Website.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20191001094750_photo_url")]
+    partial class photo_url
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -46,6 +48,8 @@ namespace E_Commerce_Website.Data.Migrations
 
                     b.Property<byte[]>("ProductImage")
                         .HasColumnType("image");
+
+                    b.Property<string>("ProductImageUrl");
 
                     b.Property<string>("ProductName");
 
